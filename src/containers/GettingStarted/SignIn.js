@@ -25,6 +25,8 @@ export default function SignIn({ isLogin, setIsLogin }) {
       email: data.get("email"),
       password: data.get("password"),
     });
+
+    
     redirect("/dashboard");
     setIsLogin(true);
   };
