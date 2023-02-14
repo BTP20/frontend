@@ -3,7 +3,7 @@ import Dashboard from "./containers/Dashboard/Dashboard";
 import GettingStarted from "./containers/GettingStarted/GettingStarted";
 
 const App = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   return (
     <>
       {isLogin ? (

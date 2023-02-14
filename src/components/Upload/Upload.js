@@ -35,12 +35,9 @@ const Upload = () => {
   const uploadChunk = async (chunk) => {
     try {
       const readableChunk = await new Response(chunk).text();
-
       const key = sha256(chunk);
       const EncryptedChunk = encryptAES(readableChunk, key);
-      console.log(key);
-
-      console.log(counter, EncryptedChunk);
+      console.log(counter, key, EncryptedChunk);
     } catch (error) {
       console.log("error", error);
     }

@@ -5,9 +5,9 @@ import Upload from "../../components/Upload/Upload";
 const Dashboard = () => {
   return (
     <>
-      <Navigate to="/" replace={true} />
+      {/* <Navigate to="/" replace={true} /> */}
       <Routes>
-        <Route path="/" element={<Upload />} />
+        <Route path="/dashboard" element={<Upload />} />
       </Routes>
     </>
   );
