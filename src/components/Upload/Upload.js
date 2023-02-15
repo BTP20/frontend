@@ -37,7 +37,7 @@ const Upload = () => {
       const readableChunk = await new Response(chunk).text();
       const key = sha256(chunk);
       const EncryptedChunk = encryptAES(readableChunk, key);
-      console.log(counter, key, EncryptedChunk);
+      console.log(counter, key, chunk);
     } catch (error) {
       console.log("error", error);
     }

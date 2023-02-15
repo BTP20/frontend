@@ -13,9 +13,11 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import { Signup } from "../../Services/Auth";
+
 const theme = createTheme();
 
-export default function SignUp({ isLogin, setIsLogin }) {
+export default function SignUp() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -27,15 +29,17 @@ export default function SignUp({ isLogin, setIsLogin }) {
       password: data.get("password"),
     };
 
-    const response = await fetch("http://localhost:4000/api/auth/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
-    const responseData = await response.json();
-    console.log(responseData);
+    // const response = await fetch("http://localhost:4000/api/auth/register", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(body),
+    // });
+    // const responseData = await response.json();
+    // console.log(responseData);
+    const response = SignUp(JSON.stringify(body));
+    console.log(response);
   };
 
   return (

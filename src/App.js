@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Dashboard from "./containers/Dashboard/Dashboard";
 import GettingStarted from "./containers/GettingStarted/GettingStarted";
 
 const App = () => {
-  const [isLogin, setIsLogin] = useState(true);
+  const user = useSelector((state) => state);
+  console.log(user);
+
   return (
     <>
-      {isLogin ? (
-        <Dashboard />
-      ) : (
-        <GettingStarted isLogin={isLogin} setIsLogin={setIsLogin} />
-      )}
+      {user.token ? <Dashboard /> : <GettingStarted />}
       {/* <Dashboard /> */}
     </>
   );
