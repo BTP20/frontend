@@ -75,7 +75,7 @@ const Upload = () => {
   };
 
   return (
-    <Container sx={{ p: 5 }}>
+    <div className="upload">
       <Button variant="contained" component="label">
         Upload
         <input
@@ -86,31 +86,14 @@ const Upload = () => {
           onChange={getFileContext}
         />
       </Button>
-      <div style={{ marginTop: 20 }}>
-        <div>
-          <b>File Size:</b>{" "}
-          <Chip
-            label={` ${fileSize}B , ${(fileSize / 1048576).toFixed(3)}MB`}
-            sx={{ m: 1 }}
-          />
-        </div>
-        <div>
-          <b>File Name:</b> <Chip label={` ${fileGuid}`} sx={{ m: 1 }} />
-        </div>
-        <div>
-          <b>Chunk Count:</b> <Chip label={` ${chunkCount}`} sx={{ m: 1 }} />
-        </div>
-        <div>
-          <b>Chunk Range:</b>
-          <Chip
-            label={` ${beginingOfTheChunk} - ${(
-              endOfTheChunk / 1048576
-            ).toFixed(2)}MB`}
-            sx={{ m: 1 }}
-          />
-        </div>
+      <div className="upload__desc">
+        <ul>
+          <li>
+            <h4>File Name:</h4>
+          </li>
+        </ul>
       </div>
-    </Container>
+    </div>
   );
 };
 

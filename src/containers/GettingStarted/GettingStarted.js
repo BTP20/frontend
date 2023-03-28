@@ -6,8 +6,9 @@ import SignUp from "./SignUp";
 const GettingStarted = () => {
   return (
     <>
+      hi
       <Routes>
-        <Route path="/*" element={<SignUp />}></Route>
+        <Route path="/" element={<SignUp />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/signin" element={<SignIn />}></Route>
       </Routes>
